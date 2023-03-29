@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    dirs: ['src'],
+    dirs: ["src"],
   },
 
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
 
   // Uncoment to add domain whitelist
@@ -21,7 +21,7 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,
       use: [
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
             typescript: true,
             icon: true,

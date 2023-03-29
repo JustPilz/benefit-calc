@@ -1,37 +1,60 @@
 import { genRandomHash } from "@/utils";
+import { Unit, UnitData } from "./types";
 
 export const UNITS = {
   gr: {
     id: "gr",
-    name: "грамм",
+    name: "1 гр",
     short: "гр",
     coef: 1,
     mass: "Вес (гр)",
-    convertTo: ["gr", "kg"],
+    convertTo: ["gr", "gr100", "kg"],
+    visible: true,
+  },
+  gr100: {
+    id: "kg",
+    name: "100 гр",
+    short: "кг",
+    coef: 100,
+    mass: "Вес (кг)",
+    convertTo: ["gr", "gr100", "kg"],
+    visible: false,
   },
   kg: {
     id: "kg",
-    name: "кило",
+    name: "1 кг",
     short: "кг",
     coef: 1000,
     mass: "Вес (кг)",
-    convertTo: ["gr", "kg"],
+    convertTo: ["gr", "gr100", "kg"],
+    visible: true,
   },
   ml: {
     id: "ml",
-    name: "мл",
+    name: "1 мл",
     short: "мл",
     coef: 1,
     mass: "Объём (мл)",
-    convertTo: ["ml", "l"],
+    convertTo: ["ml", "ml100", "l"],
+    visible: true,
+  },
+  ml100: {
+    id: "ml",
+    name: "100 мл",
+    short: "мл",
+    coef: 100,
+    mass: "Объём (мл)",
+    convertTo: ["ml", "ml100", "l"],
+    visible: false,
   },
   l: {
     id: "l",
-    name: "литр",
+    name: "1 литр",
     short: "л",
     coef: 1000,
     mass: "Объём (л)",
-    convertTo: ["ml", "l"],
+    convertTo: ["ml", "ml100", "l"],
+    visible: true,
   },
   piece: {
     id: "piece",
@@ -40,8 +63,9 @@ export const UNITS = {
     coef: 1,
     mass: "Количество",
     convertTo: ["piece"],
+    visible: true,
   },
-};
+} as Record<Unit, UnitData>;
 
 // export const defaultItems = Array.from({ length: 2 }, () => ({
 //   id: genRandomHash(5),
@@ -55,7 +79,7 @@ export const defaultItems = [
     id: genRandomHash(5),
     mass: 5,
     price: 200,
-    position: -1,
+    position: 0,
   },
   {
     id: genRandomHash(5),
