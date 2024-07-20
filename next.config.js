@@ -1,11 +1,29 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const isDev = process.env.NODE_ENV === 'development';
+const BASE_PATH = 'calcs';
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  scope: `${BASE_PATH}/`,
+});
+
+const nextConfig = withPWA({
   eslint: {
-    dirs: ["src"],
+    dirs: ['src'],
   },
+  output: isDev ? undefined : 'export',
+  basePath: isDev ? '' : `/${BASE_PATH}`,
+  assetPrefix: '/calcs/',
+
+  distDir: 'build',
 
   reactStrictMode: false,
   swcMinify: true,
+  images: {
+    unoptimized: true,
+  },
 
   // Uncoment to add domain whitelist
   // images: {
@@ -21,7 +39,7 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,
       use: [
         {
-          loader: "@svgr/webpack",
+          loader: '@svgr/webpack',
           options: {
             typescript: true,
             icon: true,
@@ -32,6 +50,6 @@ const nextConfig = {
 
     return config;
   },
-};
+});
 
 module.exports = nextConfig;

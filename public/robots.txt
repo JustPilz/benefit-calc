@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://justpilz.github.io/calcs
+
+# Sitemaps
+Sitemap: https://justpilz.github.io/calcs/sitemap.xml

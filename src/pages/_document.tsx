@@ -1,4 +1,4 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -6,11 +6,14 @@ export default function Document() {
       <Head>
         <link
           rel="preload"
-          href="/fonts/inter-var-latin.woff2"
+          href="/calcs/fonts/inter-var-latin.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link rel="manifest" href="/calcs/manifest.json" />
+        <link rel="apple-touch-icon" href="/calcs/icon-192x192.png" />
+        <meta name="theme-color" content="#042940" />
       </Head>
       <body>
         <Main />

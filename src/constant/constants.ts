@@ -67,14 +67,14 @@ export const UNITS = {
   },
 } as Record<Unit, UnitData>;
 
-// export const defaultItems = Array.from({ length: 2 }, () => ({
-//   id: genRandomHash(5),
-//   mass: -1,
-//   price: -1,
-//   position: -1,
-// }));
+export const defaultItems = Array.from({ length: 2 }, () => ({
+  id: genRandomHash(5),
+  mass: -1,
+  price: -1,
+  position: -1,
+}));
 
-export const defaultItems = [
+export const defaultItems2 = [
   {
     id: genRandomHash(5),
     mass: 5,

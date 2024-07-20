@@ -41,16 +41,16 @@ const Item = ({
       <span className={tdClassName}>
         <Input
           type="number"
-          value={mass}
-          onChange={handleFieldChange(id, "mass")}
+          value={price}
+          onChange={handleFieldChange(id, "price")}
           className={clsx(profitable && profitableClassName)}
         />
       </span>
       <span className={tdClassName}>
         <Input
           type="number"
-          value={price}
-          onChange={handleFieldChange(id, "price")}
+          value={mass}
+          onChange={handleFieldChange(id, "mass")}
           className={clsx(profitable && profitableClassName)}
         />
       </span>
