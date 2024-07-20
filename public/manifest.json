@@ -3,6 +3,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/calcs/",
+  "scope": "https://justpilz.github.io/",
   "name": "Calculators",
   "short_name": "Calcs",
   "description": "A few useful calculators for life",
