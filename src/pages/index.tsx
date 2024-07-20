@@ -1,10 +1,10 @@
+import GitHubCorner from '@/components/GithubCorner';
 import Seo from '@/components/Seo';
 import Button from '@/components/buttons/Button';
 import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
-
 /**
  * SVGR Support
  * Caveat: No React Props Type.
@@ -12,21 +12,12 @@ import UnderlineLink from '@/components/links/UnderlineLink';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import { Unit } from '@/constant/types';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { usePwa } from '@dotmind/react-use-pwa';
 import { useCallback } from 'react';
 import Calculator from '~/svg/calculator.svg';
 
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
-
 export default function HomePage() {
-  const [unit, setUnit] = useLocalStorage<Unit>('unit', 'gr');
-
-  const { installPrompt, isInstalled, isStandalone, isOffline, canInstall } =
-    usePwa();
+  const { installPrompt, isInstalled, isStandalone, canInstall } = usePwa();
 
   const handleInstallPrompt = useCallback(() => {
     if (canInstall) {
@@ -38,6 +29,7 @@ export default function HomePage() {
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
+      <GitHubCorner url="https://github.com/justpilz/calcs" />
 
       <main>
         <section className="bg-white">
@@ -48,9 +40,7 @@ export default function HomePage() {
               A few useful calculators for life
             </p>
             <p className="mt-2 text-sm text-gray-700">
-              <ArrowLink href="https://github.com/justpilz/benefit-calc">
-                See the repository
-              </ArrowLink>
+              <ArrowLink href="/components">See all components</ArrowLink>
             </p>
             <ButtonLink className="mt-6" href="/benefit" variant="light">
               Benefit Calculator
@@ -65,10 +55,6 @@ export default function HomePage() {
                 Install app
               </Button>
             )}
-
-            <ButtonLink className="mt-6" href="/components" variant="ghost">
-              See all components
-            </ButtonLink>
 
             <footer className="absolute bottom-2 text-gray-700">
               © {new Date().getFullYear()} By{' '}

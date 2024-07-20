@@ -7,6 +7,7 @@ const withPWA = require('next-pwa')({
   register: true,
   skipWaiting: true,
   scope: `${BASE_PATH}/`,
+  disable: isDev
 });
 
 const nextConfig = withPWA({
@@ -15,7 +16,7 @@ const nextConfig = withPWA({
   },
   output: isDev ? undefined : 'export',
   basePath: isDev ? '' : `/${BASE_PATH}`,
-  assetPrefix: '/calcs/',
+  assetPrefix: isDev ? undefined : '/calcs/',
 
   distDir: 'build',
 

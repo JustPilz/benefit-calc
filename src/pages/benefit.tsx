@@ -65,7 +65,6 @@ export default function Calc() {
   }, [items]);
 
   const addItem = useCallback(() => {
-    console.log(items.length);
     if (items.length == MAX_ITEMS) {
       return openModal(
         "Информация",
@@ -97,7 +96,7 @@ export default function Calc() {
   return (
     <Layout>
       <Seo
-        templateTitle="Benefit Calculator"
+        templateTitle="Benefit"
         description="Benefit calculator"
       />
 
